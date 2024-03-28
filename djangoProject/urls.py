@@ -26,7 +26,7 @@ urlpatterns = [
     path('dz6app/', include('dz6app.urls', namespace='dz6app')),
     path('', views.my_page, name='my_page'),
     path('success/', views.save_success, name='save-success'),
-    path('__debug__/', include("debug_toolbar.urls")),
+    # path('__debug__/', include("debug_toolbar.urls")),
     path('template/', views.total_in_template, name='template'),
     path('subscribe/', views.subscribe, name='subscribe'),
 
