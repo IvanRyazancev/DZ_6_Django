@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Форма заказа для {{ product.product }}</h2>
+
+    <form method="post" action="{% url 'dz6app:create_order' %}">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+        <div class="form-group">
+            <label for="clientName">Имя:</label>
+            <input type="text" class="form-control" id="clientName" name="client" required>
+        </div>
+        <div class="form-group">
+            <label for="clientEmail">Email:</label>
+            <input type="email" class="form-control" id="clientEmail" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="clientPhone">Телефон:</label>
+            <input type="text" class="form-control" id="clientPhone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="clientAddress">Адрес:</label>
+            <input type="text" class="form-control" id="clientAddress" name="address" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Подтвердить заказ</button>
+    </form>
+{% endblock %}

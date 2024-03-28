@@ -1,33 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Site{% endblock title %}</title>   
+    <title>{% block title %}Магазин №3{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <!-- Добавьте другие мета-теги, скрипты или CSS -->
     {% block extrahead %}{% endblock extrahead %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3p0R4nkn+45Jl9gOHdHkd0JCWR6sSO3eJJoCfs7s8x4pZdKEgvoLC5tHyJo" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <!-- Навигационная панель и другие элементы шапки -->
-        <nav>
-            <!-- Ссылки для навигации -->
-        </nav>
-    </header>
+<header>
+    <!-- Навигационная панель и другие элементы шапки -->
+    <nav>
+        <!-- Ссылки для навигации -->
+    </nav>
+</header>
 
-    <main>
-        <!-- Основное содержимое страницы -->
-        {% block content %}{% endblock content %}
-    </main>
+<main>
+    <!-- Основное содержимое страницы -->
+    {% block content %}{% endblock content %}
+</main>
 
-    <footer>
-        <!-- Футер с информацией о копирайте и т.д. -->
-        {% block footer %}
+<footer>
+    <!-- Футер с информацией о копирайте и т.д. -->
+    {% block footer %}
         <p>&copy; 2024 My Site</p>
-        {% endblock footer %}
-    </footer>
+    {% endblock footer %}
+</footer>
 
-    <!-- Дополнительные скрипты -->
-    {% block extrajs %}{% endblock extrajs %}
+<!-- Дополнительные скрипты -->
+{% block extrajs %}{% endblock extrajs %}
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.9/dist/umd/popper.min.js" 
+        integrity="sha384-eMNCOe7tC1doJ2ieThC7HH2kPHkfLdtWHA2Df3IgsorWl+WPoQWPmTOQHbT4vNf6" 
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy4Ck4SOF4y4Ck4C2PhM+MO+1yRC+0+6r6" 
+        crossorigin="anonymous"></script>
 </body>
 </html>

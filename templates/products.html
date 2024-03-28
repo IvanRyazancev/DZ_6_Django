@@ -1,43 +1,22 @@
+{% extends 'base.html' %}
+
 {% block content %}
-<h2>Список товаров</h2>
+    <h2>Список товаров</h2>
 
-<div class="product-list">
-    {% for product in products %}
-    <div class="product-item">
-        <h3 class="product-title">{{ product.product }}</h3>
-        <p class="product-description">{{ product.description }}</p>
-        <p class="product-price">${{ product.price }}</p>
+    <div class="sorting-buttons">
+        <a href="?sort=name" class="button">Сортировать по имени</a>
+        <a href="?sort=price" class="button">Сортировать по цене</a>
     </div>
-    {% endfor %}
-</div>
-{% endblock %}
 
-{% block css %}
-<style>
-    .product-list {
-        list-style-type: none;
-        padding: 0;
-    }
-    .product-item {
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-        padding: 20px;
-        margin-bottom: 10px;
-        border-radius: 4px;
-    }
-    .product-title {
-        color: #333;
-        font-size: 1.5em;
-        margin-bottom: 0.5em;
-    }
-    .product-description {
-        margin-bottom: 0.5em;
-        color: #666;
-        font-size: 1em;
-    }
-    .product-price {
-        font-weight: bold;
-        color: #5cb85c;
-    }
-</style>
+    <div class="product-list">
+        {% for product in products %}
+            <div class="product-item">
+                <h3 class="product-title">{{ product.product }}</h3>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">${{ product.price }}</p>
+                <a href="{% url 'dz6app:order_page' product.id %}" class="button">Заказать</a>    
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

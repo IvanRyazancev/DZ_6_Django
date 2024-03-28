@@ -1,10 +1,28 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>Главная страница</h1>
-<div>
-  <a href="{% url 'dz6app:clients' %}"><button>Клиенты</button></a>
-  <a href="{% url 'dz6app:products' %}"><button>Продукты</button></a>
-  <a href="{% url 'dz6app:orders' %}"><button>Заказы</button></a>
-</div>
+<header class="main-header">
+    <h1>Добро пожаловать в наш интернет-магазин!</h1>
+    <p>Откройте для себя мир качественных товаров по отличным ценам каждый день.</p>
+    <a href="{% url 'dz6app:products' %}" class="button-main">Изучить товары</a>
+</header>
+
+<section class="about-us">
+    <h2>О нас</h2>
+    <p>Мы предлагаем широкий ассортимент товаров для всех аспектов вашей жизни. Наша миссия — 
+        обеспечить лучший выбор, качество и цену.</p>
+</section>
+
+<section class="newsletter-signup">
+    <h2>Подпишитесь на наши новости</h2>
+    <form action="{% url 'subscribe' %}" method="post">
+        {% csrf_token %}
+        <input type="email" placeholder="Ваш Email" required>
+        <button type="submit" class="button-main">Подписаться</button>
+    </form>
+</section>
+
+<footer class="main-footer">
+    <p>© 2024 Интернет-магазин. Все права защищены.</p>
+</footer>
 {% endblock %}
