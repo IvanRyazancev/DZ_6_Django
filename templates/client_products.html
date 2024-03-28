@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Заказанные товары</h1>
+
+<div class="products-period">
+    <h2>Товары за последние 7 дней</h2>
+    <ul>
+        {% for product in products_last_7_days %}
+        <li>{{ product.product }} - {{ product.description }}</li>
+        {% empty %}
+        <li>Нет товаров за этот период.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="products-period">
+    <h2>Товары за последний месяц</h2>
+    <ul>
+        {% for product in products_last_month %}
+        <li>{{ product.product }} - {{ product.description }}</li>
+        {% empty %}
+        <li>Нет товаров за этот период.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="products-period">
+    <h2>Товары за последний год</h2>
+    <ul>
+        {% for product in products_last_year %}
+        <li>{{ product.product }} - {{ product.description }}</li>
+        {% empty %}
+        <li>Нет товаров за этот период.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

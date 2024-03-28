@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock title %}</title>   
+    <!-- Добавьте другие мета-теги, скрипты или CSS -->
+    {% block extrahead %}{% endblock extrahead %}
+</head>
+<body>
+    <header>
+        <!-- Навигационная панель и другие элементы шапки -->
+        <nav>
+            <!-- Ссылки для навигации -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- Основное содержимое страницы -->
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+        <!-- Футер с информацией о копирайте и т.д. -->
+        {% block footer %}
+        <p>&copy; 2024 My Site</p>
+        {% endblock footer %}
+    </footer>
+
+    <!-- Дополнительные скрипты -->
+    {% block extrajs %}{% endblock extrajs %}
+</body>
+</html>

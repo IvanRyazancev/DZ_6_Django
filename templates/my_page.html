@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Главная страница</h1>
+<div>
+  <a href="{% url 'dz6app:clients' %}"><button>Клиенты</button></a>
+  <a href="{% url 'dz6app:products' %}"><button>Продукты</button></a>
+  <a href="{% url 'dz6app:orders' %}"><button>Заказы</button></a>
+</div>
+{% endblock %}
